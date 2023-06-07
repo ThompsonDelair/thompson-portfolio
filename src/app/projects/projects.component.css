@@ -1,0 +1,23 @@
+#projectnav{
+    position: fixed;
+    width: 200px;
+    /* -webkit-transform: translateZ(0) */
+}
+
+#projectcontent{
+    margin-left: 200px;
+}
+
+.projectdetails{
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.project{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+/* html, body {height:100%;overflow:auto} */

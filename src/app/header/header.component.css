@@ -1,0 +1,7 @@
+nav{
+    background-color: white;
+}
+
+.myElement.is-pinned {
+    background-color: red;
+  } 

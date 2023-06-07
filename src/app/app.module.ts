@@ -8,6 +8,7 @@ import { HistoryComponent } from './history/history.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderWebdevComponent } from './header-webdev/header-webdev.component';
+import { StickySideDirective } from './sticky-side.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderWebdevComponent } from './header-webdev/header-webdev.component';
     HistoryComponent,
     ProjectsComponent,
     HeaderComponent,
-    HeaderWebdevComponent
+    HeaderWebdevComponent,
+    StickySideDirective
   ],
   imports: [
     BrowserModule,

@@ -1,106 +1,145 @@
-<div class="content">
-    <div>
-        Making RTS movement and navigation from scratch
-		<hr>
-		<ul>
-			<li>Made in Unity</li>
-			<li>Researched and implemented relevant algorithms including:
-				<ul class="listOutlineDot">
-					<li>Dijkstra pathfinding</li>
-					<li>Funnel Algorithmn</li>
-					<li>Bowyer-Watson Triangulation</li>
-				</ul>
-			</li>
-			<li>Movement and collision done with Unity Data Oriented Technology Stack</li>
-		</ul>
-		
-		
+<div #projectnav id="projectnav" style="overflow-y:scroll;">
+  <div>sidebar</div>
+  <div onclick="document.getElementById('project1').scrollIntoView();">Nav mesh</div>
+  <div onclick="document.getElementById('project3').scrollIntoView();">space game</div>
+  <div onclick="document.getElementById('project4').scrollIntoView();">zombie game</div>
+  <div onclick="document.getElementById('project5').scrollIntoView();">Sol invictus</div>
+</div>
+
+<div id="projectcontent" class="projectdetails" appStickySide>
+  <!-- project1 -->
+  <div id="project1" class="project">
+    <h3>Making RTS movement and navigation from scratch</h3>
+    
+    <hr />
+    <ul>
+      <li>Made in Unity</li>
+      <li>
+        Researched and implemented relevant algorithms including:
+        <ul class="listOutlineDot">
+          <li>Dijkstra pathfinding</li>
+          <li>Funnel Algorithmn</li>
+          <li>Bowyer-Watson Triangulation</li>
+        </ul>
+      </li>
+      <li>
+        Movement and collision done with Unity Data Oriented Technology Stack
+      </li>
+    </ul>
+  </div>
+
+  <!-- project2 -->
+  <div id="project2" class="project">
+    <div class="projectBlock">
+      <h3>Navmesh Triangulation</h3> 
+      <br />
+      <div>
+        <div class="col-md-6">
+          <video width="100%" height="100%" autoplay muted loop>
+            <source src="../../assets/videos/pathfind.mp4" type="video/mp4">
+          </video>
+          <!-- <div style="position: relative; padding-bottom: calc(80.84% + 44px)">
+            <iframe
+              src="https://gfycat.com/ifr/BlandGlisteningDowitcher"
+              frameborder="0"
+              scrolling="no"
+              width="100%"
+              height="100%"
+              style="position: absolute; top: 0; left: 0"
+              allowfullscreen
+            >
+            </iframe>
+          </div> -->
+        </div>
+        <div class="col-md-6"></div>
+      </div>
     </div>
-	
-	<div>
-		<div class="projectBlock">
-			Navmesh Triangulation<br />
-			<div class="projectGif">
-				<div style='position:relative; padding-bottom:calc(80.84% + 44px)'>
-					<iframe src='https://gfycat.com/ifr/BlandGlisteningDowitcher'
-							frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen>
-					</iframe>
-				</div>
-			</div>
-		</div>
-		<div class="projectBlock">
-			Pathfinding through Navmesh<br />
-			<div class="projectGif">
-				<div style='position: relative; padding-bottom: calc(99.80% + 44px)'>
-					<iframe src='https://gfycat.com/ifr/InsistentTanCat'
-							frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen>
-					</iframe>
-				</div>
 
-			</div>
-		</div>
-		<div class="projectBlock"> 
-			Movement <br />
-            <div class="projectGif">
-                <div style='position:relative; padding-bottom:calc(64.02% + 44px)'>
-                    <iframe src='https://gfycat.com/ifr/ChubbyUnfortunateCreature'
-                            frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-		</div>
-	</div>
+    <div class="row">
+      <div class="col-md-6">
+        <video width="100%" height="100%" autoplay muted loop>
+          <source src="../../assets/videos/navmesh_mouse.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="col-md-6">
+        <video width="100%" height="100%" autoplay muted loop>
+          <source src="../../assets/videos/navmesh_move.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
 
-	<div>BCIT project - 3D space combat
-		<hr>
-		<ul>
-			<li>Made in Unity</li>
-			<li>Researched and implemented Boids-style flocking</li>
-			<li>Object-Oriented Designed used for different spaceship classes (inheritance,polymorphism,etc)</li>
-		</ul>
-	</div>
-	<div>
-		<div class="projectBlock">
-			<iframe src='https://gfycat.com/ifr/LightheartedAthleticIndianrhinoceros' frameborder='0' scrolling='no' allowfullscreen width='640' height='502'></iframe><p> <a href="https://gfycat.com/lightheartedathleticindianrhinoceros">via Gfycat</a></p>
-		</div>
-		<div class="projectBlock">
-			<iframe src='https://gfycat.com/ifr/NeglectedActualCowbird' frameborder='0' scrolling='no' allowfullscreen width='640' height='522'></iframe><p> <a href="https://gfycat.com/neglectedactualcowbird">via Gfycat</a></p>
-		</div>
-	</div>
+  <!-- project3 -->
+  <div id="project3" class="project">
+    <h3>BCIT project - 3D space combat</h3>
+    <hr />
+    <ul>
+      <li>Made in Unity</li>
+      <li>Researched and implemented Boids-style flocking</li>
+      <li>
+        Object-Oriented Designed used for different spaceship classes
+        (inheritance,polymorphism,etc)
+      </li>
+      <li>custom collsion and target finding</li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <video width="100%" height="100%" autoplay muted loop>
+        <source src="../../assets/videos/space_01.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="col-md-6">
+      <video width="100%" height="100%" autoplay muted loop>
+        <source src="../../assets/videos/space_02.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
 
-	<div>BCIT project - Zombie survival strategy
-		<hr>
-		<ul>
-			<li>Made in Unity</li>
-			<li>Used code from previous navmesh+movement project</li>
-			<li>Data for game entities stored in data-driven design, continguous arrays of component data instead of Object-Oriented Design</li>
-			<li>Experimented with simulating large number of game entities at once</li>
-		</ul>
-	</div>
-	<div>
-		<div class="projectBlock">
-			<iframe src='https://gfycat.com/ifr/AmusedOrneryDutchsmoushond' frameborder='0' scrolling='no' allowfullscreen width='640' height='373'></iframe><p> <a href="https://gfycat.com/amusedornerydutchsmoushond">via Gfycat</a></p>
-		</div>
-	</div>
-	
-	<div>BCIT project - "SOL Invictus"
-		<hr>
-		<ul>
-			<li>Made in Unity</li>
-			<li>Used code from previous navmesh+movement project</li>
-			<li>Created map editor tool in Unity</li>
-			<li>Generated render meshes in addition to nav meshses</li>
-		</ul>
-	</div>
-	<div>
-		<div class="projectBlock">
-			The map designed by the map editor
-			<img src="https://imgur.com/SHpkhWU">
-			The nav mesh generated for the map
-			<img src="https://i.imgur.com/B6r3kA0.png">
-			Render meshes created
-			<img src="https://i.imgur.com/pcRYavZ.png">
-		</div>
-	</div>
-	
+  <!-- project 4 -->
+  <div id="project4" class="project">
+    <h3>BCIT project - Zombie survival strategy</h3>
+    <hr />
+    <ul>
+      <li>Made in Unity</li>
+      <li>Implemented previously created navmesh code into a large project</li>
+      <li>
+        Data for game entities stored in data-driven design, continguous arrays
+        of component data instead of Object-Oriented Design
+      </li>
+      <li>
+        Experimented with simulating large number of game entities at once
+      </li>
+      <li>implemented command pattern for AI and player input</li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <video width="100%" height="100%" autoplay muted loop>
+        <source src="../../assets/videos/zombie_game.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- project 5 -->
+  <div id="project5" class="project">
+    <h3>BCIT project - "SOL Invictus"</h3>    
+    <hr />
+    <ul>
+      <li>Made in Unity</li>
+      <li>Used code from previous navmesh+movement project</li>
+      <li>Created map editor tool in Unity</li>
+      <li>Generated render meshes in addition to nav meshses</li>
+      <li>Created physics system form scratch</li>
+      <li>implemented enemy type class system</li>
+      <li>implemented ai behavior such as line-of-sight pursuit and terrain dependant movement</li>
+    </ul>
+  </div>
+  <div>
+    <div class="row">      
+      <img src="https://imgur.com/SHpkhWU.png" class="col-md-4">
+      <img src="https://i.imgur.com/B6r3kA0.png" class="col-md-4">
+      <img src="https://i.imgur.com/pcRYavZ.png" class="col-md-4">
+    </div>
+  </div>
 </div>
