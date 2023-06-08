@@ -1,31 +1,14 @@
-<nav class="navbar navbar-expand-lg" appStickySide #headermain>
-    <a routerLink="/" class="navbar-brand">About Me</a>
-    <button 
-        (click)="isCollapsed = !isCollapsed"
-        class="navbar-toggler" 
-        type="button" 
-        data-toggle="collapse" 
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div [class.collapse]="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a routerLink="/history" class="nav-link">History</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/projects" class="nav-link">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/" class="nav-link">other stuff</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/" class="nav-link">More Stuff</a>
-            </li>
-        </ul>
+<div class="headerBar" appStickySide>
+    <span class="headerItem" (click)="scrollToTargetAdjusted('about')">About</span>
+    <span class="headerItem" (click)="scrollToTargetAdjusted('projects')">Projects</span>
+    <span class="headerItem" (click)="scrollToTargetAdjusted('history')">History</span>
+    <a class="headerItem" src="../../assets/pdfs/Resume - Thompson DeLair-Dobrovolny.pdf">Resume</a>
+    <span class="headerItem" (click)="scrollToTargetAdjusted('contact')">Contact</span>
+    <div class="headerImageHolder">
+        <a href="https://github.com/ThompsonDelair">
+            <img class="headerImage" src="../../assets/images/icons8-github-48.png" alt="">  
+        </a>
     </div>
-</nav>
+
+      
+</div>

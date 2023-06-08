@@ -1,145 +1,217 @@
-<div #projectnav id="projectnav" style="overflow-y:scroll;">
-  <div>sidebar</div>
-  <div onclick="document.getElementById('project1').scrollIntoView();">Nav mesh</div>
-  <div onclick="document.getElementById('project3').scrollIntoView();">space game</div>
-  <div onclick="document.getElementById('project4').scrollIntoView();">zombie game</div>
-  <div onclick="document.getElementById('project5').scrollIntoView();">Sol invictus</div>
-</div>
 
-<div id="projectcontent" class="projectdetails" appStickySide>
-  <!-- project1 -->
-  <div id="project1" class="project">
-    <h3>Making RTS movement and navigation from scratch</h3>
-    
-    <hr />
-    <ul>
-      <li>Made in Unity</li>
-      <li>
-        Researched and implemented relevant algorithms including:
-        <ul class="listOutlineDot">
-          <li>Dijkstra pathfinding</li>
-          <li>Funnel Algorithmn</li>
-          <li>Bowyer-Watson Triangulation</li>
-        </ul>
-      </li>
-      <li>
-        Movement and collision done with Unity Data Oriented Technology Stack
-      </li>
-    </ul>
-  </div>
+<h3>Projects</h3>
+<hr>
+<div class="content" id="projects">
 
-  <!-- project2 -->
-  <div id="project2" class="project">
-    <div class="projectBlock">
-      <h3>Navmesh Triangulation</h3> 
-      <br />
-      <div>
-        <div class="col-md-6">
-          <video width="100%" height="100%" autoplay muted loop>
-            <source src="../../assets/videos/pathfind.mp4" type="video/mp4">
+  <div *ngFor="let project of projects; let i = index">
+    <div class="container">
+      <div class="item">
+        <div *ngIf="project.video; else elseBlock">
+          <video class="projectVideo" autoplay muted loop>
+            <source [src]="project.mediaURL" type="video/mp4">
           </video>
-          <!-- <div style="position: relative; padding-bottom: calc(80.84% + 44px)">
-            <iframe
-              src="https://gfycat.com/ifr/BlandGlisteningDowitcher"
-              frameborder="0"
-              scrolling="no"
-              width="100%"
-              height="100%"
-              style="position: absolute; top: 0; left: 0"
-              allowfullscreen
-            >
-            </iframe>
-          </div> -->
         </div>
-        <div class="col-md-6"></div>
+        <ng-template #elseBlock>
+          <div>
+            <img class="projectImage" [src]="project.mediaURL">
+          </div>
+        </ng-template>
+      </div>
+      <div class="item projectDesc">  
+        <h5>{{project.title}}</h5>
+        <div class="projectSummary">{{project.description}}</div>
+		<span class="projectSummary">Responsible for:<br>  </span>
+		<span *ngFor="let highlight of project.highlights">
+			- {{highlight}}<br>
+		</span>
+		<!-- <span>{{i}} and {{projects.length}}</span> -->
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <video width="100%" height="100%" autoplay muted loop>
-          <source src="../../assets/videos/navmesh_mouse.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-md-6">
-        <video width="100%" height="100%" autoplay muted loop>
-          <source src="../../assets/videos/navmesh_move.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
+    <hr *ngIf="i + 1 != projects.length">
   </div>
 
-  <!-- project3 -->
-  <div id="project3" class="project">
-    <h3>BCIT project - 3D space combat</h3>
-    <hr />
-    <ul>
-      <li>Made in Unity</li>
-      <li>Researched and implemented Boids-style flocking</li>
-      <li>
-        Object-Oriented Designed used for different spaceship classes
-        (inheritance,polymorphism,etc)
-      </li>
-      <li>custom collsion and target finding</li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <video width="100%" height="100%" autoplay muted loop>
-        <source src="../../assets/videos/space_01.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="col-md-6">
-      <video width="100%" height="100%" autoplay muted loop>
-        <source src="../../assets/videos/space_02.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
+	<!-- <div class="container">
+		<div class="item">
+			<video class="projectVideo" autoplay muted loop>
+				<source src="https://i.imgur.com/Gm2hWtl.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="item projectDesc">
+      <h5>BCIT project - "SOL Invictus"</h5>
+      <p class="projectSummary">
+      A top-down shooter made in Unity using C#. Part of a team of 3. Most of the game systems were built from scratch instead of using Unity's built-in functionality.<br>
+      </p>
+      <span class="projectSummary">Responsible for:<br>  </span>
+      <span class="projectHighlights">
+      - 2D physics/collision system<br>
+      - Pathfinding + Enemy behavior + Enemy abilities<br>
+      - Level editor tool<br>
+      - Automatic generation of 3D meshes from base level geometry
+      </span>
+		</div>
+	</div>
+	<hr>
 
-  <!-- project 4 -->
-  <div id="project4" class="project">
-    <h3>BCIT project - Zombie survival strategy</h3>
-    <hr />
-    <ul>
-      <li>Made in Unity</li>
-      <li>Implemented previously created navmesh code into a large project</li>
-      <li>
-        Data for game entities stored in data-driven design, continguous arrays
-        of component data instead of Object-Oriented Design
-      </li>
-      <li>
-        Experimented with simulating large number of game entities at once
-      </li>
-      <li>implemented command pattern for AI and player input</li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <video width="100%" height="100%" autoplay muted loop>
-        <source src="../../assets/videos/zombie_game.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
+	<p class="font400">Trieris multiplayer prototype</p>
+	<div class="container">
+		<div class="item">					
+			<img class="projectImage" src="https://i.imgur.com/252XSvu.png">
+		</div>
+		<div class="item">
+			<ul>
+				<li>Worked in a team to port a pre-existing video game prototype into the Unity engine and expand on features</li>
+				<li>Responsible for:
+					<ul>
+						<li>Adding animation systems to all dynamic aspects of game</li>
+						<li>Refactoring systems to allow for multiple players & online play</li>
+						<li>Bug fixing, testing</li>
+					</ul>
+				</li>
+				<li>Successfully implemented multiplayer using Photon and deployed to Windows desktop and chrome webapp</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
 
-  <!-- project 5 -->
-  <div id="project5" class="project">
-    <h3>BCIT project - "SOL Invictus"</h3>    
-    <hr />
-    <ul>
-      <li>Made in Unity</li>
-      <li>Used code from previous navmesh+movement project</li>
-      <li>Created map editor tool in Unity</li>
-      <li>Generated render meshes in addition to nav meshses</li>
-      <li>Created physics system form scratch</li>
-      <li>implemented enemy type class system</li>
-      <li>implemented ai behavior such as line-of-sight pursuit and terrain dependant movement</li>
-    </ul>
-  </div>
-  <div>
-    <div class="row">      
-      <img src="https://imgur.com/SHpkhWU.png" class="col-md-4">
-      <img src="https://i.imgur.com/B6r3kA0.png" class="col-md-4">
-      <img src="https://i.imgur.com/pcRYavZ.png" class="col-md-4">
-    </div>
-  </div>
+	<p class="font400">Edgar the X-Terminator</p>
+	<div class="container">
+		<div class="item">					
+			<img class="projectImage" src="https://i.imgur.com/2ULhFR5.png">
+		</div>
+		<div class="item">
+			<ul>
+				<li>Worked in a 12 person team to create a 2D game engine from scratch using openGL and C++</li>
+				<li>Responsible for:
+					<ul>
+						<li>Helping plan the overall software architecture and coordinating graphics, phyiscs, and other sub-teams</li>
+						<li>Creating and optimizing the Entity-Component management system</li>
+							<ul>
+								<li>This system handled the creation and memory allocation of all game entities</li>
+								<li>Allowed for querying of game entities based on tags, sprites, and component types</li>
+								<li>Created a cache system for entities queries to enhance performance</li>
+							</ul>
+						<li>Working with the graphics team to identifying performance bottlenecks and fix them</li>
+						<li>Implementing a simple particle system</li>
+						<li>Bug fixing, testing</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<p class="font400">Solus, a short first person horror game</p>
+	<div class="container">
+		<div class="item">					
+			<img class="projectImage" src="https://i.imgur.com/NUzXGWW.png">
+		</div>
+		<div class="item">
+			<ul>
+				<li>Worked in a 4 person team to create an atmospheric first person horror game in Unity</li>
+				<li>Responsible for:
+					<ul>
+						<li>Creating a event system used for level design</li>
+						<li>Created a "detective vision" system using shaders</li>
+						<li>Designing, whiteboxing, and creating 3D assets for some of the levels</li>
+						<li>Misc engineering duties</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<p class="font400">Making RTS movement and navigation from scratch</p>
+	<div class="container">
+		<div class="item">
+			<video class="projectVideo" autoplay muted loop>
+				<source src="https://i.imgur.com/s4Nv3ce.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="item">
+			<ul>
+				<li>Made in Unity Game Engine using C#</li>
+				<li>Researched and implemented relevant algorithms including:
+					<ul class="listOutlineDot">
+						<li>Dijkstra pathfinding</li>
+						<li>Funnel Algorithmn</li>
+						<li>Bowyer-Watson Triangulation</li>
+					</ul>
+				</li>
+				<li>Triangular navmesh generated from verticies and edges defined by square grid</li>
+				<li>Movement and collision systems implemented with Unity Data Oriented Technology Stack</li>
+				<li>Optimized code for performance for both navmesh generation and pathfinding time</li>
+				<li>Implemented multi-threaded navmesh generation</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<p class="font400">BCIT project - 3D space combat</p>
+	<div class="container">
+		<div class="item">
+			<video class="projectVideo" autoplay muted loop>
+				<source src="https://i.imgur.com/EgNlggv.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="item">
+			<ul>
+				<li>Made in Unity Game Engine using C#</li>
+				<li>Researched and implemented Boids-style flocking 
+					<ul>
+						<li>(a method for having large groups of flying objects act as a cohesive swarm)</li>
+					</ul>					
+					</li>
+				<li>Object-Oriented Designed used for different spaceship classes (inheritance,polymorphism,etc)</li>
+				<li>Used 3D assets from Unity asset store</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<p class="font400 projectTitle">BCIT project - Zombie survival strategy</p>
+	<div class="container">
+		<div class="item">
+			<video class="projectVideo" autoplay muted loop>
+				<source src="https://i.imgur.com/wGBALmf.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="item">
+			<ul>
+				<li>Made in Unity Game Engine using C#</li>
+				<li>Practical implementation of previously researched navmesh + movement concepts</li>
+				<li>Used the "command" design pattern for AI behavior
+					<ul>
+						<li>AI actions are encapsulated as objects in a stack</li>
+						<li>Allows AI to continue previous behavior when an action is complete</li>
+						<li>Allows information like animation timing and attack target to be attached to behavior</li>
+					</ul>
+				</li>
+				<li>Game entities organized in data-driven design, continguous arrays of component data</li>
+				<li>Experimented with simulating large number of game entities at once</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<p class="font400">Gadget Master, short Godot Engine summer project</p>
+	<div class="container">
+		<div class="item">					
+			<img class="projectImage" src="https://i.imgur.com/ZDcbEb9.png">
+		</div>
+		<div class="item">
+      
+
+			<ul>
+				<li>Worked in a 3 person team to create a game in the Godot engine</li>
+				<li>Responsible for:</li>
+				<ul>
+					<li>Working on UI elements</li>
+					<li>Creating a dialogue system and data structure for dialogue files</li>
+				</ul>				
+			</ul>
+		</div>
+	</div>
+	<hr> -->
+
 </div>

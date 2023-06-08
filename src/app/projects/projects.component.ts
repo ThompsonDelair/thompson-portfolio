@@ -12,6 +12,8 @@ export class ProjectsComponent {
   @ViewChild('projectnav')
   projectnav!: ElementRef; 
 
+  projects = environment.project_content;
+
   count = 0;
 
   constructor(private renderer: Renderer2){
@@ -34,8 +36,8 @@ export class ProjectsComponent {
     // const count2 = getComputedStyle(this.projectnav.nativeElement).getPropertyValue('top');
     // console.log("count2: "+count2);
 
-    console.log(environment.header_bottom);
-    this.renderer.setStyle(this.projectnav.nativeElement,'top',environment.header_bottom+"px")
+    // console.log(environment.header_bottom);
+    // this.renderer.setStyle(this.projectnav.nativeElement,'top',environment.header_bottom+"px")
 
   }
 

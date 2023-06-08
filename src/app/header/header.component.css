@@ -4,4 +4,42 @@ nav{
 
 .myElement.is-pinned {
     background-color: red;
-  } 
+} 
+
+.headerItem {
+    
+    padding: 15px;
+    margin-left: 10px;
+	margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.headerImage{
+    width: 40px;
+    /* display: inline-flex; */
+    /* margin-left: auto; */
+    /* float: right; */
+}
+
+.headerImageHolder{
+    display: inline-flex;
+    margin-left: 10px;
+	margin-right: 10px;
+    padding: 4px;
+}
+
+.headerImageHolder:hover{
+    background-color: dimgray;
+}
+
+.headerItem:hover {
+    background-color: dimgray;
+}
+
+.headerBar {
+    background-color: #464646;
+    color: white;
+    padding-left: 64px;
+}

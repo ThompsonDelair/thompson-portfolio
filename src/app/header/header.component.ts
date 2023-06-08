@@ -21,19 +21,31 @@ export class HeaderComponent implements AfterViewInit {
     // console.log('header start is: '+this.headermain.nativeElement.)
   }
 
-  @HostListener('window:scroll', ['$event']) // for window scroll events
-  onScroll(event: Event) {
-    //console.log("scroll event: "+window.scrollY)
-    const {x,y,right, bottom} = this.headermain.nativeElement.getBoundingClientRect();
-    //const height = this.headermain.nativeElement.;
-    if(y == 0){
-      //console.log('stuck');
-      environment.sticky = true;
-    } else {
-      environment.sticky = false;
-    }
-    environment.header_bottom = bottom;
+  // @HostListener('window:scroll', ['$event']) // for window scroll events
+  // onScroll(event: Event) {
+  //   //console.log("scroll event: "+window.scrollY)
+  //   const {x,y,right, bottom} = this.headermain.nativeElement.getBoundingClientRect();
+  //   //const height = this.headermain.nativeElement.;
+  //   if(y == 0){
+  //     //console.log('stuck');
+  //     environment.sticky = true;
+  //   } else {
+  //     environment.sticky = false;
+  //   }
+  //   environment.header_bottom = bottom;
 
-  }
+  // }
+
+  scrollToTargetAdjusted(elementName: string): void{
+    var element = document.getElementById(elementName);
+    var headerOffset = 130;
+    var elementPosition = element?.getBoundingClientRect().top;
+    var offsetPosition = elementPosition! + window.pageYOffset - headerOffset;
+  
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
+}
 
 }
